@@ -2,10 +2,35 @@
     display: flex
 
     height: 3em
+    width: 100%
     align-items: center
     padding: 0 1em
+    box-sizing: border-box
 
     .title
         font-size: 1.2em
         color: #fff
         font-weight: 500
+
+    @include media('<=1920px', '>1440px')
+        font-size: 22px
+    @include media('<=1440px', '>1366px')
+        font-size: 21px
+    @include media('<=1280px', '>1024px')
+        font-size: 20px
+    @include media('<=1024px', '>768px')
+        font-size: 18px
+    @include media('<=768px', '>560px')
+        font-size: 15px
+    @include media('<=720px', '>560px')
+        font-size: 18px
+    @include media('<=560px', '>=480px')
+        font-size: 16px
+    @include media('<480px', '>=360px')
+        font-size: 14px
+    @include media('<360px', '>=300px')
+        font-size: 12px
+    @include media('<300px', '>=240px')
+        font-size: 10px
+    @include media('<240px')
+        font-size: 8px

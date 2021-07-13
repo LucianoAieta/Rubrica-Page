@@ -9,15 +9,19 @@ mixin Card()
                 .title Hasta
                 input(type="number").form
         .options
-            .input
-                .title Libro
-                input(type="text").form
-            .input
-                .title Empresa
-                input(type="text").form
+            .container
+                .input
+                    .title Libro
+                    input(type="text").form
+                .input
+                    .title Empresa
+                    input(type="text").form
             .input
                 .title RUC
                 input(type="text").form
+        .buttons
+            button.button Previsualizar
+            button.button Imprimir
             
 
 if js

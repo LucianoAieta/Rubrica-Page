@@ -1,18 +1,45 @@
 .card
     display: flex
     flex-flow: wrap column
-    gap: 2.25em
+    gap: 1.5em
 
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    // position: absolute
+    // top: 50%
+    // left: 50%
+    // transform: translate(-50%, -50%)
 
     background-color: $grey-2
 
+    width: 35em
     padding: 1.5em
+
     border-radius: 1em
     color: #ebebeb
+
+    @include media('<=1920px', '>1440px')
+        font-size: 22px
+    @include media('<=1440px', '>1366px')
+        font-size: 18px
+    @include media('<=1280px', '>1024px')
+        font-size: 18px
+    @include media('<=1024px', '>768px')
+        font-size: 20px
+    @include media('<=768px', '>768px')
+        font-size: 18px
+    @include media('<=720px', '>560px')
+        font-size: 16px
+    @include media('<=560px')
+        width: 20em
+    @include media('<=560px', '>=480px')
+        font-size: 16px
+    @include media('<480px', '>=360px')
+        font-size: 14px
+    @include media('<360px', '>=300px')
+        font-size: 12px
+    @include media('<300px', '>=240px')
+        font-size: 10px
+    @include media('<240px')
+        font-size: 8px
 
     .title
         font-size: 1.3em
@@ -22,12 +49,13 @@
         display: flex
         flex-flow: wrap column
         gap: .5em
+        width: 100%
         .title
             font-size: 1em
             font-weight: 400
         .form
             padding: .8em
-            width: 20em
+            width: 100%
 
             color: #fff
             background-color: $grey-3
@@ -37,6 +65,40 @@
             border: none
             border-radius: 3.125em
 
+            box-sizing: border-box
+            font-size: .9em
+
     .from-to
         display: flex
         gap: 1em
+        @include media('<=560px')
+            flex-flow: wrap column
+
+    .options
+        display: flex
+        flex-flow: wrap column
+        gap: 1em
+        background-color: $grey-1
+        padding: 1em
+        border-radius: 1em
+        .container
+            display: flex
+            gap: 1em
+            @include media('<=560px')
+                flex-flow: wrap column
+            
+    .buttons
+        display: flex
+        gap: 1em
+        width: 100%
+        .button
+            width: 100%
+            padding: .7em
+            font-size: 1em
+            border-radius: .5em
+            border: none
+            background-color: #30868B
+            color: #fff
+            font-weight: 600
+        @include media('<=560px')
+            flex-flow: wrap column
