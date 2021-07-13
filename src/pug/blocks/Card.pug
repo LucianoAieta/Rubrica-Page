@@ -1,0 +1,24 @@
+mixin Card()
+    .card
+        h2.title Imprimir serie
+        .from-to
+            .input
+                .title Desde
+                input(type="number").form
+            .input
+                .title Hasta
+                input(type="number").form
+        .options
+            .input
+                .title Libro
+                input(type="text").form
+            .input
+                .title Empresa
+                input(type="text").form
+            .input
+                .title RUC
+                input(type="text").form
+            
+
+if js
+    +Card
