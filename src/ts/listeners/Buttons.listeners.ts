@@ -1,10 +1,8 @@
-import { setLoadingScreen } from '../loading/loading.screen';
+import { handlePrevisualizeButton } from '../handlers/Previsualize.handler';
 
 const PrevisualizeButtonListener = () => {
     const PrevisualizeButton = document.querySelector('#previsualize');
-    PrevisualizeButton.addEventListener('click', () =>
-        setLoadingScreen({ opacity: '1' })
-    );
+    PrevisualizeButton.addEventListener('click', handlePrevisualizeButton);
 };
 
 export const ButtonsListeners = () => {

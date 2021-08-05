@@ -2,12 +2,12 @@ from os import path
 import os
 from flask import Flask, render_template, send_from_directory
 
-app = Flask(__name__, template_folder='./dist/views/',
+app = Flask(__name__, template_folder='./dist/',
             static_folder='/dist/')
 
 @app.route('/')
 def home():
-    return render_template('main.html')
+    return render_template('index.html')
 
 @app.route('/js/<path:filename>')
 def serve_js(filename):
