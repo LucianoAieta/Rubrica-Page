@@ -19,6 +19,16 @@ mixin Card()
             .input
                 .title RUC
                 input(type="text").form
+        .typeButtons
+            input.radio#compras(checked type="radio", name="typeButton")
+            label.typeButton(for="compras") Compras
+            input.radio#ventas(type="radio", name="typeButton")
+            label.typeButton(for="ventas") Ventas
+            input.radio#mayor(type="radio", name="typeButton")
+            label.typeButton(for="mayor") Mayor
+            input.radio#diario(type="radio", name="typeButton")
+            label.typeButton(for="diario") Diario
+
         .buttons
             button#previsualize.button Previsualizar
             button#print.button Imprimir

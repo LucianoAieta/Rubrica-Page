@@ -86,7 +86,52 @@
             gap: 1em
             @include media('<=560px')
                 flex-flow: wrap column
+
+    .typeButtons
+        display: flex
+        justify-items: space-between
+        justify-content: center
+        align-items: center
+        flex-wrap: nowrap
+        gap: 1em
+
+        box-sizing: border-box
+
+        .radio
+            position: absolute
+            opacity: 0
+
+        .typeButton
+            width: 100%
+            padding: .8em 0
+            margin: 0
+            user-select: none
+            cursor: pointer
+
+            text-align: center
+            background-color: $grey-1
+            flex-grow: 50%
+
+            border-radius: 1em
+
+            transition: background-color .2s ease
+
+        
+            @include media('<560px')
+                width: 47%
+        
+        .radio:checked + .typeButton
+            background-color: $grey-3
             
+        .radio:focus + .typeButton
+            background-color: $grey-3
+
+        .radio:hover + .typeButton
+            background-color: #585858
+    
+        @include media('<560px')
+            flex-wrap: wrap
+
     .buttons
         display: flex
         gap: 1em
@@ -100,5 +145,6 @@
             background-color: $primary
             color: #fff
             font-weight: 600
+            cursor: pointer
         @include media('<=560px')
             flex-flow: wrap column
