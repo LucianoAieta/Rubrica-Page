@@ -1,10 +1,12 @@
+export type rubricaTypes = 'MAYOR' | 'DIARIO' | 'VENTAS' | 'COMPRAS';
+
 export type RestBody = {
     desde: number;
     hasta: number;
     empresa: string | null;
-    libro: number | null;
+    libro: string | null;
     ruc: number | string | null;
-    tipoRubrica: 'MAYOR' | 'DIARIO' | 'VENTAS' | 'COMPRAS';
+    tipoRubrica: rubricaTypes;
 };
 
-export type getPDF = (body: RestBody) => Promise<string>;
+export type getPDF = (body: RestBody) => Promise<Blob>;
