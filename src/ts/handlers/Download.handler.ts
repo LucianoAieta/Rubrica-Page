@@ -3,7 +3,7 @@ import { getInputsData } from '../requests/getInputsData';
 import { getPDFData } from '../requests/getPDF.request';
 import { downloadPDF } from './PDF.handlers';
 
-export const handlePrevisualizeButton = async () => {
+export const handleDownloadButton = async () => {
     try {
         setLoadingScreen({ opacity: '1', visibility: 'visible' });
         downloadPDF(await getPDFData(getInputsData()));

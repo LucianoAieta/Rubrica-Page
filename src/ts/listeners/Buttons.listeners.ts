@@ -1,10 +1,10 @@
-import { handlePrevisualizeButton } from '../handlers/Previsualize.handler';
+import { handleDownloadButton } from '../handlers/Download.handler';
 
-const PrevisualizeButtonListener = () => {
-    const PrevisualizeButton = document.querySelector('#previsualize');
-    PrevisualizeButton.addEventListener('click', handlePrevisualizeButton);
+const DownloadButtonListener = () => {
+    const DownloadButton = document.querySelector('#download');
+    DownloadButton.addEventListener('click', handleDownloadButton);
 };
 
 export const ButtonsListeners = () => {
-    PrevisualizeButtonListener();
+    DownloadButtonListener();
 };
