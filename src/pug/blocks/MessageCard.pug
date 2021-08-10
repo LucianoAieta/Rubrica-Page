@@ -1,7 +1,7 @@
 mixin MessageCard({ href, message })
     img.icon(src=`./${href}.svg`, alt="Request Icon")
     p.message=message
-    
+    img#exit.exit(src="./cross.svg", alt="Close Card Icon")
 
 if js
     +MessageCard({ href, message})
