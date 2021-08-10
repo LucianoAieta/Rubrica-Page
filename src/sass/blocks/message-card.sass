@@ -1,0 +1,43 @@
+.message-card
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    flex-flow: wrap column
+
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) scale(.1)
+    opacity: 0
+
+    transition: opacity .5s ease
+
+    width: 20em
+    height: 15em
+    background-color: $grey-2
+    border-radius: 1em
+    box-sizing: border-box
+    .icon
+        width: 5em
+    .message
+        color: #fff
+        font-weight: 400
+        font-size: 1.5em
+        text-align: center
+    &.active
+        animation: EntranceAnimation .5s ease forwards
+        opacity: 1
+    &.off
+        animation: ExitAnimation .5s ease forwards
+        opacity: 0
+    @keyframes EntranceAnimation
+        0%
+            transform: translate(-50%, -50%) scale(0)
+        100%
+            transform: translate(-50%, -50%) scale(1)
+    @keyframes ExitAnimation
+        0%
+            transform: translate(-50%, -50%) scale(1)
+        100%
+            transform: translate(-50%, -50%) scale(0)
+            

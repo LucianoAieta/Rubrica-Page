@@ -3,11 +3,11 @@ type LoadingProperties = {
     visibility: string;
 };
 
-export const setLoadingScreen = ({
-    opacity = '0',
-    visibility = 'hidden',
-}: LoadingProperties) => {
-    const LoadingElement: HTMLDivElement = document.querySelector('.loading-background');
-    LoadingElement.style.opacity = opacity;
-    LoadingElement.style.visibility = visibility;
+export const setLoaderAndText = ({ visibility, opacity }: LoadingProperties) => {
+    const LoadingIcon: HTMLElement = document.querySelector(
+        '.loading-container .loading'
+    );
+    const LoadingText: HTMLElement = document.querySelector('.loading-container .text');
+    LoadingIcon.style.opacity = opacity;
+    LoadingText.style.visibility = visibility;
 };

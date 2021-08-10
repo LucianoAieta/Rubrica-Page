@@ -1,0 +1,7 @@
+mixin MessageCard({ href, message })
+    img.icon(src=`./${href}.svg`, alt="Request Icon")
+    p.message=message
+    
+
+if js
+    +MessageCard({ href, message})
