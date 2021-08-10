@@ -24,7 +24,6 @@ export const handleDownloadButton = async () => {
         setMessageCard({ href: 'check', message: 'Archivo generado correctamente!' });
         messageCardListeners(ExitTimeout);
     } catch (error) {
-        console.log(error);
         setLoaderAndText({ opacity: '0', visibility: 'hidden' });
         setMessageCard({ href: 'error', message: 'Ocurrió un error, intente de nuevo.' });
         messageCardListeners(ExitTimeout);
