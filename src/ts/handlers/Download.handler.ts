@@ -15,17 +15,18 @@ export const finalAnimations = () => {
 };
 
 export const handleDownloadButton = async () => {
-    const ExitTimeout = setTimeout(finalAnimations, 3000);
     try {
         setOverlay({ opacity: '1', visibility: 'visible' });
         setLoaderAndText({ opacity: '1', visibility: 'visible' });
         downloadPDF(await getPDFData(getInputsData()));
         setLoaderAndText({ opacity: '0', visibility: 'hidden' });
         setMessageCard({ href: 'check', message: 'Archivo generado correctamente!' });
+        const ExitTimeout = setTimeout(finalAnimations, 3000);
         messageCardListeners(ExitTimeout);
     } catch (error) {
         setLoaderAndText({ opacity: '0', visibility: 'hidden' });
         setMessageCard({ href: 'error', message: 'Ocurrió un error, intente de nuevo.' });
+        const ExitTimeout = setTimeout(finalAnimations, 3000);
         messageCardListeners(ExitTimeout);
     }
 };

@@ -15,7 +15,7 @@ export const setMessageCard = ({ href, message }) => {
 };
 
 export const removeMessageCard = () => {
-    const CardElement = document.querySelector('.message-card');
+    const CardElement = document.querySelector('.overlay .message-card');
     CardElement.addEventListener('animationend', CardElement.remove);
     CardElement.classList.add('off');
 };
