@@ -22,11 +22,11 @@ mixin Card()
         .typeButtons
             input.radio#compras(checked type="radio", name="typeButton")
             label.typeButton(for="compras") Compras
-            input.radio#ventas(type="radio", name="typeButton")
+            input.radio#ventas(type="radio", name="typeButton", disabled)
             label.typeButton(for="ventas") Ventas
-            input.radio#mayor(type="radio", name="typeButton")
+            input.radio#mayor(type="radio", name="typeButton", disabled)
             label.typeButton(for="mayor") Mayor
-            input.radio#diario(type="radio", name="typeButton")
+            input.radio#diario(type="radio", name="typeButton", disabled)
             label.typeButton(for="diario") Diario
 
         .buttons
