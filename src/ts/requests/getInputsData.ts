@@ -5,10 +5,10 @@ const getInputElementData = (selector: string) => {
     return InputElement.value;
 };
 
-const getCheckedButton = (selector: string) => {
-    const Buttons: HTMLInputElement[] = Array.from(document.querySelectorAll(selector));
-    const CheckedButton = Buttons.find(({ checked }) => checked);
-    return CheckedButton.id.toUpperCase();
+const getSelectedType = (selector: string) => {
+    const DropdownElement: HTMLInputElement = document.querySelector(selector);
+    if (DropdownElement.textContent === 'Seleccione un tipo') throw 'Invalid type';
+    return DropdownElement.textContent.toUpperCase();
 };
 
 export const getInputsData: () => RestBody = () => {
@@ -17,7 +17,7 @@ export const getInputsData: () => RestBody = () => {
     const libro = getInputElementData('#libro');
     const empresa = getInputElementData('#empresa');
     const ruc = getInputElementData('#ruc');
-    const tipoRubrica = getCheckedButton('.radio') as rubricaTypes;
+    const tipoRubrica = getSelectedType('#dropdown') as rubricaTypes;
     const body: RestBody = {
         desde,
         hasta,
@@ -26,5 +26,7 @@ export const getInputsData: () => RestBody = () => {
         ruc,
         tipoRubrica,
     };
+    console.log(body);
+
     return body;
 };

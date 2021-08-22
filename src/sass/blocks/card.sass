@@ -137,6 +137,75 @@
         @include media('<=560px')
             flex-wrap: wrap
 
+    .typeDropdown
+        display: flex
+        flex-flow: wrap column
+        justify-content: center
+        align-content: center
+
+        width: 100%
+
+        .dropdown
+            display: flex
+            justify-content: space-between
+            width: 100%
+            padding: 1em
+            box-sizing: border-box
+            background-color: $grey-1
+            border-radius: 1em
+            transition: background-color .3s ease, border-radius .2s ease
+            cursor: pointer
+            user-select: none
+
+            .arrow
+                width: 1em
+                transition: transform .4s ease
+            
+            &.active .arrow
+                transform: rotate(180deg)
+            
+            &:hover
+                background-color: $grey-3
+            
+            &.active
+                background-color: #1b1b1b
+                &:hover
+                    background-color: $grey-3
+
+        .typeOptions
+            height: 0
+            transform-origin: 50% 0%
+            transform: scaleY(0)
+            opacity: 0
+            transition: transform .3s ease, opacity .3s ease
+            margin-top: 0
+
+            .typeOption
+                width: 100%
+                box-sizing: border-box
+
+                padding: 1em
+                background-color: $grey-1
+
+                transition: background-color .3s ease
+                cursor: pointer
+                user-select: none
+                &:hover
+                    background-color: $grey-3
+                    
+                &:last-child
+                    border-radius: 0 0 1em 1em
+                &:first-child
+                    border-radius: 1em 1em 0 0
+
+            &.active
+                opacity: 1
+                margin-top: 1em
+                height: auto
+                transform: scaleY(1)
+                    
+
+
     .buttons
         display: flex
         gap: 1em
@@ -148,11 +217,14 @@
             border-radius: .5em
             border: 2px solid transparent
             background-color: $primary
+            transition: background-color .3s ease
             color: #fff
             font-weight: 600
             cursor: pointer
             &:focus
                 outline: none
                 border: 2px solid #25afb6
+            &:hover
+                background-color: #099da5
         @include media('<=560px')
             flex-flow: wrap column

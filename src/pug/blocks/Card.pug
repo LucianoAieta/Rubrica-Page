@@ -19,15 +19,25 @@ mixin Card()
             .input
                 .title RUC
                 input#ruc(type="text").form
-        .typeButtons
-            input.radio#compras(checked type="radio", name="typeButton")
-            label.typeButton(for="compras") Compras
-            input.radio#ventas(type="radio", name="typeButton", disabled)
-            label.typeButton(for="ventas") Ventas
-            input.radio#mayor(type="radio", name="typeButton", disabled)
-            label.typeButton(for="mayor") Mayor
-            input.radio#diario(type="radio", name="typeButton", disabled)
-            label.typeButton(for="diario") Diario
+        
+        //- .typeButtons
+        //-     input.radio#compras(checked type="radio", name="typeButton")
+        //-     label.typeButton(for="compras") Compras
+        //-     input.radio#ventas(type="radio", name="typeButton", disabled)
+        //-     label.typeButton(for="ventas") Ventas
+        //-     input.radio#mayor(type="radio", name="typeButton", disabled)
+        //-     label.typeButton(for="mayor") Mayor
+        //-     input.radio#diario(type="radio", name="typeButton", disabled)
+        //-     label.typeButton(for="diario") Diario
+
+        .typeDropdown
+            .dropdown#dropdown Seleccione un tipo
+                img.arrow(src="./arrow.svg", alt="Dropdown Arrow")
+            .typeOptions#options
+                .typeOption Compras
+                .typeOption Ventas
+                .typeOption Mayor
+                .typeOption Diario
 
         .buttons
             button#download.button Generar Archivo
