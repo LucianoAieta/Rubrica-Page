@@ -34,10 +34,12 @@ mixin Card()
             .dropdown#dropdown Seleccione un tipo
                 img.arrow(src="./arrow.svg", alt="Dropdown Arrow")
             .typeOptions#options
-                .typeOption Compras
-                .typeOption Ventas
-                .typeOption Mayor
-                .typeOption Diario
+                .input
+                    input#searchtype(placeholder="Buscar...").form
+                .optionsContainer
+                    -const RubricaTypes = ['Mayor', 'Diario', 'Ventas', 'Compras']
+                    each name in RubricaTypes
+                        .typeOption=name
 
         .buttons
             button#download.button Generar Archivo

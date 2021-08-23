@@ -1,7 +1,8 @@
-import { RestBody, rubricaTypes } from './getPDF.types';
+import { RestBody } from './getPDF.types';
 
 const getInputElementData = (selector: string) => {
     const InputElement: HTMLInputElement = document.querySelector(selector);
+    if (InputElement.value === '') throw 'Void input';
     return InputElement.value;
 };
 
@@ -17,7 +18,7 @@ export const getInputsData: () => RestBody = () => {
     const libro = getInputElementData('#libro');
     const empresa = getInputElementData('#empresa');
     const ruc = getInputElementData('#ruc');
-    const tipoRubrica = getSelectedType('#dropdown') as rubricaTypes;
+    const tipoRubrica = getSelectedType('#dropdown');
     const body: RestBody = {
         desde,
         hasta,
@@ -26,7 +27,5 @@ export const getInputsData: () => RestBody = () => {
         ruc,
         tipoRubrica,
     };
-    console.log(body);
-
     return body;
 };
