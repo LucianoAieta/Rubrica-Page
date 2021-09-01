@@ -5,6 +5,7 @@ export type RestBody = {
     libro: string | null;
     ruc: number | string | null;
     tipoRubrica: string;
+    logo: File;
 };
 
 export type getPDF = (body: RestBody) => Promise<Blob>;

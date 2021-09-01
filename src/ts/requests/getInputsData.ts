@@ -12,6 +12,12 @@ const getSelectedType = (selector: string) => {
     return DropdownElement.textContent.toUpperCase();
 };
 
+const getUploadedImage = (selector: string) => {
+    const ImageInputElement: HTMLInputElement = document.querySelector(selector);
+    if (!ImageInputElement.files[0]) throw 'Missing image';
+    return ImageInputElement.files[0];
+};
+
 export const getInputsData: () => RestBody = () => {
     const desde = +getInputElementData('#desde');
     const hasta = +getInputElementData('#hasta');
@@ -19,6 +25,7 @@ export const getInputsData: () => RestBody = () => {
     const empresa = getInputElementData('#empresa');
     const ruc = getInputElementData('#ruc');
     const tipoRubrica = getSelectedType('#dropdown');
+    const logo = getUploadedImage('#imageInput');
     const body: RestBody = {
         desde,
         hasta,
@@ -26,6 +33,9 @@ export const getInputsData: () => RestBody = () => {
         empresa,
         ruc,
         tipoRubrica,
+        logo,
     };
+    console.log(body);
+
     return body;
 };

@@ -4,42 +4,41 @@ mixin Card()
         .from-to
             .input
                 .title Desde
-                input#desde(type="number").form
+                input#desde(type='number').form
             .input
                 .title Hasta
-                input#hasta(type="number").form
+                input#hasta(type='number').form
         .options
             .container
                 .input
                     .title Libro
-                    input#libro(type="text").form
+                    input#libro(type='text').form
                 .input
                     .title Empresa
-                    input#empresa(type="text").form
+                    input#empresa(type='text').form
             .input
                 .title RUC
-                input#ruc(type="text").form
-        
-        //- .typeButtons
-        //-     input.radio#compras(checked type="radio", name="typeButton")
-        //-     label.typeButton(for="compras") Compras
-        //-     input.radio#ventas(type="radio", name="typeButton", disabled)
-        //-     label.typeButton(for="ventas") Ventas
-        //-     input.radio#mayor(type="radio", name="typeButton", disabled)
-        //-     label.typeButton(for="mayor") Mayor
-        //-     input.radio#diario(type="radio", name="typeButton", disabled)
-        //-     label.typeButton(for="diario") Diario
+                input#ruc(type='text').form
 
         .typeDropdown
             .dropdown#dropdown Seleccione un tipo
-                img.arrow(src="./arrow.svg", alt="Dropdown Arrow")
+                img.arrow(src='./arrow.svg', alt='Dropdown Arrow')
             .typeOptions#options
                 .input
-                    input#searchtype(placeholder="Buscar...").form
+                    input#searchtype(placeholder='Buscar...').form
                 .optionsContainer
                     -const RubricaTypes = ['Mayor', 'Diario', 'Ventas', 'Compras']
                     each name in RubricaTypes
                         .typeOption=name
+
+        .imageContainer
+            .imageDropArea#imageDropArea
+                input#imageInput(type='file' accept='image/*' style='display:none;')
+                label.label(for='imageInput') Seleccione una imagen aquí
+            .imageSelectedCard#imageSelectedCard Imagen seleccionada correctamente
+                .imageButtons
+                    button#reselectImage.imageButton Seleccionar otra
+                    button#deleteImage.imageButton.red Remover
 
         .buttons
             button#download.button Generar Archivo

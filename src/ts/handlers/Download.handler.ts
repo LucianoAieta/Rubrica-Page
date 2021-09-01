@@ -1,10 +1,10 @@
-import { setLoaderAndText } from '../loading/loading.screen';
+import { setLoaderAndText } from '../loading-screen/loading.screen';
 import {
     messageCardListeners,
     removeMessageCard,
     setMessageCard,
-} from '../loading/MessageCard';
-import { setOverlay } from '../loading/Overlay';
+} from '../loading-screen/MessageCard';
+import { setOverlay } from '../loading-screen/Overlay';
 import { getInputsData } from '../requests/getInputsData';
 import { getPDFData } from '../requests/getPDF.request';
 import { downloadPDF } from './PDF.handlers';
