@@ -263,6 +263,9 @@
                 box-sizing: border-box
                 // &:hover
                 //     color: #00f2ff
+            
+            @include media('<=560px')
+                height: 10em
         .imageSelectedCard
             position: absolute
             top: -0
@@ -275,6 +278,7 @@
             visibility: hidden
 
             user-select: none
+            text-align: center
 
             width: 100%
             padding: 1em
@@ -301,6 +305,10 @@
                     cursor: pointer
                     &.red
                         background-color: #BA1010
+            @include media('<=560px')
+                height: 10em
+                .imageButtons
+                    flex-direction: column
 
     .buttons
         display: flex
