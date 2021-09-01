@@ -20,6 +20,11 @@ export const handleRemoveImage = () => {
     cleanInputFiles('#imageInput');
 };
 
+export const handleReselectImage = () => {
+    const ImageInput: HTMLInputElement = document.querySelector('#imageInput');
+    ImageInput.click();
+};
+
 export const handleSelectedImage = () => {
     const Input: HTMLInputElement = document.querySelector('#imageInput');
     const { files } = Input;

@@ -1,5 +1,6 @@
 import {
     handleRemoveImage,
+    handleReselectImage,
     handleSelectedImage,
     hideSelectedImageCard,
     showSelectedImageCard,
@@ -22,13 +23,19 @@ const imageInputListener = () => {
     Input.addEventListener('change', handleSelectedImage);
 };
 
-const selectedImageCardListener = () => {
+const removeButtonListener = () => {
     const RemoveButton = document.querySelector('#deleteImage');
     RemoveButton.addEventListener('click', handleRemoveImage);
+};
+
+const reselectButtonListener = () => {
+    const ReselectButton = document.querySelector('#reselectImage');
+    ReselectButton.addEventListener('click', handleReselectImage);
 };
 
 export const imageDropListeners = () => {
     imageInputListener();
     imageDropAreaListener();
-    selectedImageCardListener();
+    removeButtonListener();
+    reselectButtonListener();
 };
