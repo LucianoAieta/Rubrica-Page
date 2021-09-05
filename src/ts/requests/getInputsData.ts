@@ -35,7 +35,5 @@ export const getInputsData: () => RestBody = () => {
         tipoRubrica,
         logo,
     };
-    console.log(body);
-
     return body;
 };

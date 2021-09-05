@@ -14,6 +14,13 @@ export const rubricaTypes = [
     'Registro de Acciones',
 ];
 
+export const getSelectedTypes = (value: string): string[] => {
+    const SearchedTypes = rubricaTypes.filter(el =>
+        el.toLowerCase().includes(value.toLowerCase())
+    );
+    return SearchedTypes;
+};
+
 export const handleSearchInput = ({ target }) => {
     const SearchedTypes = rubricaTypes.filter(el =>
         el.toLowerCase().includes(target.value.toLowerCase())
