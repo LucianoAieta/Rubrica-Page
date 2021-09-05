@@ -2,11 +2,7 @@
     display: flex
     flex-flow: wrap column
     gap: 1.5em
-
-    // position: absolute
-    // top: 50%
-    // left: 50%
-    // transform: translate(-50%, -50%)
+    margin-bottom: 2em
 
     background-color: $grey-2
 
@@ -93,56 +89,6 @@
             gap: 1em
             @include media('<=560px')
                 flex-flow: wrap column
-
-    // .typeButtons
-    //     display: flex
-    //     justify-items: space-between
-    //     justify-content: center
-    //     align-items: center
-    //     flex-wrap: nowrap
-    //     gap: 1em
-
-    //     box-sizing: border-box
-
-    //     .radio
-    //         position: absolute
-    //         opacity: 0
-
-    //     .typeButton
-    //         width: 100%
-    //         padding: .8em 0
-    //         margin: 0
-    //         user-select: none
-    //         cursor: pointer
-
-    //         text-align: center
-    //         background-color: $grey-1
-    //         flex-grow: 50%
-
-    //         border-radius: 1em
-
-    //         transition: background-color .2s ease
-
-        
-    //         @include media('<560px')
-    //             width: 47%
-        
-    //     .radio:checked + .typeButton
-    //         background-color: $grey-3
-            
-    //     .radio:focus + .typeButton
-    //         background-color: $grey-3
-
-    //     .radio:hover + .typeButton
-    //         background-color: #585858
-
-    //     .radio:disabled + .typeButton
-    //         background-color: $grey-1
-    //         color: #585858
-    //         cursor: default
-    
-    //     @include media('<=560px')
-    //         flex-wrap: wrap
 
     .typeDropdown
         display: flex
@@ -247,6 +193,11 @@
             border-radius: 1em
             user-select: none
             color: #ffffff
+            transition: border-color .3s ease, background-color .3s ease
+
+            &:hover
+                border-color: #636363
+                background-color: $grey-3
 
             .label
                 display: flex
@@ -266,6 +217,7 @@
             
             @include media('<=560px')
                 height: 10em
+
         .imageSelectedCard
             position: absolute
             top: -0

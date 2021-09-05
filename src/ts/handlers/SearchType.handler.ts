@@ -1,6 +1,18 @@
 import { dropdownOptionsListener } from '../listeners/Dropdown.listeners';
 
-export const rubricaTypes = ['Mayor', 'Diario', 'Ventas', 'Compras'];
+export const rubricaTypes = [
+    'Mayor',
+    'Diario',
+    'Ventas',
+    'Compras',
+    'Inventario',
+    'Acta de Asamblea',
+    'Acta de Directorio',
+    'Registro de Accionistas',
+    'Registro de Firmas',
+    'Registro de Asistencia',
+    'Registro de Acciones',
+];
 
 export const handleSearchInput = ({ target }) => {
     const SearchedTypes = rubricaTypes.filter(el =>

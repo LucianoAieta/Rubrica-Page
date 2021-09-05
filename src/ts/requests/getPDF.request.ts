@@ -6,7 +6,7 @@ export const getPDFData: getPDF = async body => {
     const FetchedPDF = await fetch(`${ServerLocalhost}/rubrica`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'multipart/form-data',
         },
         body: JSON.stringify(body),
     });

@@ -27,9 +27,8 @@ mixin Card()
                 .input
                     input#searchtype(placeholder='Buscar...').form
                 .optionsContainer
-                    -const RubricaTypes = ['Mayor', 'Diario', 'Ventas', 'Compras']
-                    each name in RubricaTypes
-                        .typeOption=name
+                    include ../helpers/InjectRubricaTypes.pug
+                    +InjectRubricaTypes
 
         .imageContainer
             .imageDropArea#imageDropArea
@@ -37,8 +36,8 @@ mixin Card()
                 label.label(for='imageInput') Seleccione una imagen aquí
             .imageSelectedCard#imageSelectedCard Imagen seleccionada correctamente
                 .imageButtons
-                    button#reselectImage.imageButton Seleccionar otra
-                    button#deleteImage.imageButton.red Remover
+                    button#reselectImage.imageButton Actualizar imagen
+                    button#deleteImage.imageButton.red Remover imagen
 
         .buttons
             button#download.button Generar Archivo
