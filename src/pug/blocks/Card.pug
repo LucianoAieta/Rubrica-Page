@@ -37,7 +37,9 @@ mixin Card()
             .imageSelectedCard#imageSelectedCard Imagen seleccionada correctamente
                 .imageButtons
                     button#reselectImage.imageButton Actualizar imagen
+                        img(src="reload.svg", alt="Reload Icon")
                     button#deleteImage.imageButton.red Remover imagen
+                        img(src="trash.svg", alt="Trash Icon")
 
         .buttons
             button#download.button Generar Archivo

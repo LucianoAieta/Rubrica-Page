@@ -245,6 +245,10 @@
                 gap: 1em
                 width: 100%
                 .imageButton
+                    display: flex
+                    gap: .5em
+                    align-items: center
+                    justify-content: center
                     width: 100%
                     background-color: $grey-3
                     color: #fff
@@ -256,7 +260,10 @@
                     font-weight: 500
                     cursor: pointer
                     &.red
-                        background-color: #BA1010
+                        background-color: #650000
+
+                    img
+                        width: 1em
             @include media('<=560px')
                 height: 10em
                 .imageButtons
