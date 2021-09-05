@@ -1,7 +1,11 @@
-import { getSelectedTypes } from '../src/ts/handlers/SearchType.handler';
+import { getSelectedTypes, rubricaTypes } from '../src/ts/handlers/SearchType.handler';
 
-test('Search type "Registro de Accionistas"', () => {
-    expect(getSelectedTypes('Registro de Accionistas')).toStrictEqual([
-        'Registro de Accionistas',
-    ]);
+test('Search each rubricaTypes', () => {
+    rubricaTypes.forEach(RubricaType => {
+        expect(getSelectedTypes(RubricaType)).toStrictEqual([RubricaType]);
+    });
+});
+
+test('Search various rubricaTypes', () => {
+    expect(getSelectedTypes('di')).toStrictEqual(['Diario', 'Acta de Directorio']);
 });
