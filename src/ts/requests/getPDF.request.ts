@@ -1,14 +1,19 @@
-import { getPDF } from './getPDF.types';
+import { getPDF, RestBody } from './getPDF.types';
 
 const ServerLocalhost = 'http://localhost:8080';
+
+const getFormData = (body: RestBody) => {
+    const BodyToBeSend = new FormData();
+    Object.keys(body).forEach(ObjectKey => {
+        BodyToBeSend.append(ObjectKey, body[ObjectKey]);
+    });
+    return BodyToBeSend;
+};
 
 export const getPDFData: getPDF = async body => {
     const FetchedPDF = await fetch(`${ServerLocalhost}/rubrica`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
-        body: JSON.stringify(body),
+        body: getFormData(body),
     });
 
     return await FetchedPDF.blob();
